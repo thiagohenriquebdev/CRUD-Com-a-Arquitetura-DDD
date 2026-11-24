@@ -1,10 +1,10 @@
 package com.estoque.domain.entity;
 
-public record CategoriaId(Long id) {
+import java.util.UUID;
+
+public record CategoriaId(UUID id) {
 	
-	 public CategoriaId {
-		if (id == null || id <= 0) {
-			throw new IllegalArgumentException("ID null");
-		}
+	public CategoriaId () {
+		this(UUID.randomUUID());
 	}
 }

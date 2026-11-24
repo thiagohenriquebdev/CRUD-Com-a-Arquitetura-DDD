@@ -12,12 +12,16 @@ public class Produto {
 	
 	private Categoria categoria;
 
-	public Produto(ProdutoId id, String nome, double valor,Categoria categoria) {
+	public Produto(String nome, double valor,Categoria categoria) {
 		
 		if (nome == null || nome.isBlank()) {
 			throw new ProdutoException("Nome Nao Pode Ser Null");
 		}
-		this.id = id;
+		if (categoria == null) {
+			throw new ProdutoException("Categoria Obrigatorio !!!");
+		}
+		
+		this.id =new ProdutoId();
 		this.nome = nome;
 		this.valor = valor;
 		this.categoria=categoria;

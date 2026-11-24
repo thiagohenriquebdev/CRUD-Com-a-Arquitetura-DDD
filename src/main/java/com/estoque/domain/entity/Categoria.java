@@ -8,11 +8,11 @@ public class Categoria {
 	
 	private String nome;
 
-	public Categoria(CategoriaId id, String nome) {
+	public Categoria(String nome) {
 		if (nome == null || nome.isBlank()) {
-			throw new CategoriaException("Categoria Null");
+			throw new CategoriaException("Categoria Nao Pode Ser Null");
 		}
-		this.id = id;
+		this.id = new CategoriaId();
 		this.nome = nome;
 	}
 

@@ -1,11 +1,11 @@
 package com.estoque.domain.entity;
 
-public record ProdutoId (Long id) {
+import java.util.UUID;
 
-	public ProdutoId {
-		if(id == null || id <= 0) {
-			throw new IllegalArgumentException("ID null");
-		}
+public record ProdutoId (UUID id) {
+	
+	public ProdutoId () {
+		this(UUID.randomUUID());
 	}
 	
 }
